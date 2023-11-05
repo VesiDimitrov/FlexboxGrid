@@ -1,0 +1,68 @@
+/* Estableix l'estil bàsic per al cos de la pàgina */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estil per a la capçalera */
+header {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Estil per al títol de la capçalera */
+header h1 {
+  font-size: 24px;
+  margin: 0;
+}
+
+/* Contenidor principal */
+main {
+  padding: 20px;
+}
+
+/* Estil per a la secció de Flexbox */
+.flex-container {
+  display: flex;
+  flex-wrap: wrap; /* Permet que els elements s'envolvin en diverses files quan la finestra del navegador es fa més petita */
+  justify-content: space-between; /* Espai entre elements horitzontalment */
+}
+
+/* Estil per als elements Flexbox */
+.flex-item {
+  background-color: red;
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin: 10px;
+  text-align: center;
+  flex: 1;
+  width: calc(33.33% - 20px); /* Estableix un ample del 33.33% perquè hi hagi tres elements per fila */
+}
+
+/* Estil per a les imatges dins dels elements Flexbox */
+.flex-item img {
+  max-width: 100%; /* Estableix un amplada màxima per a les imatges */
+  height: auto; /* Manté la relació d'aspecte */
+}
+
+/* Consulta de mitjans per a pantalles més petites */
+@media (max-width: 768px) {
+  .flex-container {
+    flex-direction: column; /* Canvia la direcció a "column" per col·locar els elements un sota de l'altre */
+    align-items: left; /* Centra els elements verticalment quan estan en una columna */
+  }
+  .flex-item {
+    width: 100%; /* Canvia l'amplada a 100% perquè els elements ocupin tota la pantalla en una columna */
+  }
+}
+
+/* Estil per als efectes en passar el ratolí sobre els elements */
+.flex-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
